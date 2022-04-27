@@ -10,7 +10,7 @@
  ```
 
 
-#### Install 
+#### Install Python Packages
 
 ```
 pip3 install selenium
