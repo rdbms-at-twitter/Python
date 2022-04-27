@@ -1,6 +1,6 @@
 ## Preparation
 
-- Install Python (Depend on Platfrom)
+#### Install Python (Depend on Platfrom)
   https://www.python.org/
   You can use pyenv for multi versioning.
 
@@ -10,10 +10,12 @@
  ```
 
 
-- Install 
-  pip3 install selenium
-  pip install pandas
+#### Install 
 
+```
+pip3 install selenium
+pip install pandas
+```
 
-- Download and Locate Chromedriver
+#### Download and Locate Chromedriver
   https://chromedriver.chromium.org/downloads
