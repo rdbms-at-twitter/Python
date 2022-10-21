@@ -1,0 +1,4 @@
+./deta*
+FASTAPI/deploy_api/.deta/
+.ht*
+*__pycache__*
