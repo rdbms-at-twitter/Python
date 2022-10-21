@@ -1,2 +1,7 @@
+# Ignore Cache
+
 *__pycache__*
-*./deta*
+
+# Ignore deta Info
+FASTAPI/deploy_api/.deta/*
+
