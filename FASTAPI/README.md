@@ -155,3 +155,100 @@ INFO:     Started server process [7123]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
+
+
+## Post Item
+
+Using ``` from pydantic import BaseModel ```
+
+Check it Out: http://127.0.0.1:8000/docs
+
+- Curl ALL
+
+```
+shinya@DESKTOP-8BDL7KA:~$ curl -X 'POST' \
+  'http://127.0.0.1:8000/item' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "Humberger",
+  "description": "with Chips",
+  "price": 500,
+  "tax": 1.1
+}'
+{"name":"Humberger","description":"with Chips","price":500,"tax":1.1}shinya@DESKTOP-8BDL7KA:~$
+```
+
+- Curl Modify with Fstring
+
+```
+curl -X 'POST' \
+  'http://127.0.0.1:8000/item' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "ハンバーガー",
+  "description": "トマト入り",
+  "price": 505,
+  "tax": 1.1
+}'
+```
+
+- Response body
+
+```
+{
+  "message": "ハンバーガーは、税込みで555円です。"
+}
+```
+
+
+
+- Load Server with reload
+```
+shinya@DESKTOP-8BDL7KA:~/win/github/Python/FASTAPI$ uvicorn post_item:app --reload
+INFO:     Will watch for changes in these directories: ['/mnt/c/WLS/github/Python/FASTAPI']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7637] using StatReload
+INFO:     Started server process [7639]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60824 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60824 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60830 - "POST /item HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60834 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60834 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60840 - "POST /item HTTP/1.1" 200 OK
+```
+
+
+
+
+### Post Item Validation
+
+- Item Length 4-12
+```
+Item{
+name*	string
+title: Name
+maxLength: 12
+minLength: 4
+description	string
+title: Description
+price*	integer
+title: Price
+tax	Tax[...]
+ 
+}
+```
+
+- Using Field for Validate Length
+```
+shinya@DESKTOP-8BDL7KA:~/win/github/Python/FASTAPI$ uvicorn shop_api:app --reload
+INFO:     Will watch for changes in these directories: ['/mnt/c/WLS/github/Python/FASTAPI']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [11876] using StatReload
+INFO:     Started server process [11878]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
