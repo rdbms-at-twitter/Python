@@ -31,3 +31,4 @@ for i in range(n):
 # close the database connection
 cursor.close()
 cnx.close()
+
