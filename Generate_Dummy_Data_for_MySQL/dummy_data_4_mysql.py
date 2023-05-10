@@ -24,11 +24,10 @@ for i in range(n):
     flag_id = fake.random_number(digits=1)
     created = fake.date()
 
-    query = "INSERT INTO Dummy_Table (uuid,kind,via,item_id,payload,is_failed,created) VALUES (%s ,%s, %s, %s, %s, %s, %s)"
+    query = "INSERT INTO Dummy_Table (uid,cid,cfname,clname,description,flag_id,created) VALUES (%s ,%s, %s, %s, %s, %s, %s)"
     cursor.execute(query, (uid, cid, cfname, clname, description, flag_id, created))
     cnx.commit()
     time.sleep(0.0001)
 # close the database connection
 cursor.close()
 cnx.close()
-
