@@ -82,12 +82,12 @@ Successfully installed PyMySQL-1.0.3 greenlet-2.0.2 importlib-metadata-6.5.1 num
 - If you don't install mysql-connector, you might need to install it.
 
 ```
-[ec2-user@ip-172-31-8-156 mer]$ pip install mysql-connector-python
+$ pip install mysql-connector-python
 Defaulting to user installation because normal site-packages is not writeable
 Collecting mysql-connector-python
   Downloading mysql_connector_python-8.3.0-cp38-cp38-manylinux_2_17_x86_64.whl (21.5 MB)
      |████████████████████████████████| 21.5 MB 65 kB/s
 Installing collected packages: mysql-connector-python
 Successfully installed mysql-connector-python-8.3.0
-[ec2-user@ip-172-31-8-156 mer]$
+$
 ```
