@@ -78,3 +78,16 @@ Collecting zipp>=0.5 (from importlib-metadata->sqlalchemy->-r requirements.txt (
 Installing collected packages: pytz, zipp, tqdm, PyMySQL, numpy, greenlet, pandas, importlib-metadata, sqlalche        my
 Successfully installed PyMySQL-1.0.3 greenlet-2.0.2 importlib-metadata-6.5.1 numpy-1.21.6 pandas-1.3.5 pytz-202        3.3 sqlalchemy-2.0.10 tqdm-4.65.0 zipp-3.15.0
 ```
+
+- If you don't install mysql-connector, you might need to install it.
+
+```
+[ec2-user@ip-172-31-8-156 mer]$ pip install mysql-connector-python
+Defaulting to user installation because normal site-packages is not writeable
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-8.3.0-cp38-cp38-manylinux_2_17_x86_64.whl (21.5 MB)
+     |████████████████████████████████| 21.5 MB 65 kB/s
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-8.3.0
+[ec2-user@ip-172-31-8-156 mer]$
+```
